@@ -280,13 +280,10 @@ const VisibleTodoList = connect (
 //     );
 //   }
 // }
+// VisibleTodoList.contextTypes = {
+//   store: PropTypes.object
+// };
 
-//対応するcontextを受け取るのに必須
-VisibleTodoList.contextTypes = {
-  store: PropTypes.object
-};
-
-//container component
 const TodoApp = () =>
     (
       <div>
@@ -295,20 +292,6 @@ const TodoApp = () =>
         <Footer />
       </div>
     );
-
-// class Provider extends Component{
-//   getChildContext(){
-//     return {
-//       store: this.props.store
-//     };
-//   }
-//   render(){
-//     return this.props.children;
-//   }
-// }
-// Provider.childContextTypes = {
-//   store: PropTypes.object
-// };
 
 ReactDOM.render(
     <Provider store = {createStore(todoApp)} >
